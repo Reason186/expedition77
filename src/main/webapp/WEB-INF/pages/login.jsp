@@ -2,92 +2,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f4f6f9;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
-
-    .container {
-        background: #fff;
-        padding: 30px;
-        border-radius: 10px;
-        width: 320px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    input {
-        width: 100%;
-        padding: 10px;
-        margin: 8px 0;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        box-sizing: border-box;
-    }
-
-    button {
-        width: 100%;
-        padding: 10px;
-        background: #2d89ef;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background: #1b5fbd;
-    }
-
-    .link {
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    a {
-        text-decoration: none;
-        color: #2d89ef;
-    }
-
-    .message {
-        text-align: center;
-        color: red;
-        margin-bottom: 15px;
-        font-size: 14px;
-    }
-</style>
+    <!-- Link external CSS -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/styles/login.css">
 </head>
 
 <body>
 
-<div class="container">
-    <h2>Login</h2>
+    <div class="container">
 
-    <form action="${pageContext.request.contextPath }/login" method="post">
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Password" required>
+        <div class="card">
 
-        <button type="submit">Login</button>
-    </form>
+            <!-- Title -->
+            <h2 class="title">
+                Welcome to Expedition77
+            </h2>
 
-    <div class="link">
-        <a href="#">Forgot Password?</a><br>
-        Don’t have an account? <a href="${pageContext.request.contextPath }/register">Register</a>
+            <!-- Form -->
+            <form class= "form" action="${pageContext.request.contextPath }/login" method="post">
+
+                <!-- Email -->
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="you@example.com">
+                </div>
+
+                <!-- Password -->
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••">
+                </div>
+
+                <!-- Forgot Password -->
+                <div class="forgot">
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn">
+                    Login
+                </button>
+
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <div></div>
+                <span>OR</span>
+                <div></div>
+            </div>
+
+            <!-- Create Account -->
+            <p class="footer-text">
+                Don’t have an account?
+                <a href="${pageContext.request.contextPath }/register">Create one</a>
+            </p>
+
+        </div>
+
     </div>
-</div>
 
 </body>
 </html>
