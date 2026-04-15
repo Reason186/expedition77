@@ -27,7 +27,7 @@ public class HomeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/WEB-INF/pages/home.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/pages/HomePage.jsp").forward(request, response);
 	}
 
 	/**
