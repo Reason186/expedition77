@@ -121,7 +121,273 @@
         </div>
     </div>
 
+    <!-- ═══ REVIEWS SECTION ═══ -->
+    <div class="reviews-section">
+        <div class="reviews-header">
+            <span class="section-tag">Testimonials</span>
+            <h2 class="section-title">What Trekkers Say</h2>
+            <p class="section-sub">Real stories from real adventurers who explored with us</p>
+        </div>
+
+        <div class="reviews-track-wrapper">
+
+            <!-- ROW 1 — scrolls left -->
+            <div class="reviews-track track-left">
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"The Everest Base Camp trek was the most transformative experience of my life. Our guide Pemba was exceptional — knowledgeable, patient, and always encouraging."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">JM</div>
+                        <div class="reviewer-info">
+                            <strong>James Mitchell</strong>
+                            <span>United Kingdom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Annapurna Circuit in 21 days was simply breathtaking. Expedition 77 handled everything flawlessly — accommodation, permits, and a wonderful local guide."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">SL</div>
+                        <div class="reviewer-info">
+                            <strong>Sophie Laurent</strong>
+                            <span>France</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                    <p class="review-text">"Langtang Valley was perfect for my first Himalayan trek. The team was incredibly supportive and made me feel safe throughout the entire journey."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">RK</div>
+                        <div class="reviewer-info">
+                            <strong>Ravi Kumar</strong>
+                            <span>India</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"From booking to the final descent, everything was seamless. The porters, the food, the campsites — all top-notch. I'll definitely be back for Manaslu!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">AW</div>
+                        <div class="reviewer-info">
+                            <strong>Anna Weber</strong>
+                            <span>Germany</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Our guide Dawa shared so much about Sherpa culture and history. It wasn't just a trek — it was a cultural immersion. Absolutely recommended!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">TC</div>
+                        <div class="reviewer-info">
+                            <strong>Thomas Chen</strong>
+                            <span>United States</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DUPLICATES for seamless loop -->
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"The Everest Base Camp trek was the most transformative experience of my life. Our guide Pemba was exceptional — knowledgeable, patient, and always encouraging."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">JM</div>
+                        <div class="reviewer-info">
+                            <strong>James Mitchell</strong>
+                            <span>United Kingdom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Annapurna Circuit in 21 days was simply breathtaking. Expedition 77 handled everything flawlessly — accommodation, permits, and a wonderful local guide."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">SL</div>
+                        <div class="reviewer-info">
+                            <strong>Sophie Laurent</strong>
+                            <span>France</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                    <p class="review-text">"Langtang Valley was perfect for my first Himalayan trek. The team was incredibly supportive and made me feel safe throughout the entire journey."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">RK</div>
+                        <div class="reviewer-info">
+                            <strong>Ravi Kumar</strong>
+                            <span>India</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"From booking to the final descent, everything was seamless. The porters, the food, the campsites — all top-notch. I'll definitely be back for Manaslu!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">AW</div>
+                        <div class="reviewer-info">
+                            <strong>Anna Weber</strong>
+                            <span>Germany</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Our guide Dawa shared so much about Sherpa culture and history. It wasn't just a trek — it was a cultural immersion. Absolutely recommended!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">TC</div>
+                        <div class="reviewer-info">
+                            <strong>Thomas Chen</strong>
+                            <span>United States</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- end track-left -->
+
+            <!-- ROW 2 — scrolls right -->
+            <div class="reviews-track track-right">
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Upper Mustang felt like stepping into another world. The landscape is surreal and our guide's knowledge of the forbidden kingdom's history was incredible."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">LB</div>
+                        <div class="reviewer-info">
+                            <strong>Lena Bergström</strong>
+                            <span>Sweden</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"I came alone and left with lifelong friends. Expedition 77 created the perfect group dynamic and the safety protocols made my family worry a lot less!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">MO</div>
+                        <div class="reviewer-info">
+                            <strong>Marco Oliveira</strong>
+                            <span>Brazil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                    <p class="review-text">"The Manaslu Circuit was tough but the views were worth every step. Our guide pushed us just enough while always prioritising our wellbeing."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">HN</div>
+                        <div class="reviewer-info">
+                            <strong>Hana Nakamura</strong>
+                            <span>Japan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Truly a bucket-list experience. The team went above and beyond when one of us had altitude sickness — professional, calm, and incredibly caring."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">EP</div>
+                        <div class="reviewer-info">
+                            <strong>Elena Petrov</strong>
+                            <span>Russia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"The sunrise from Poon Hill alone was worth the entire trip. Expedition 77 made sure we arrived at the perfect time. I cannot recommend them enough."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">KA</div>
+                        <div class="reviewer-info">
+                            <strong>Kofi Asante</strong>
+                            <span>Ghana</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DUPLICATES for seamless loop -->
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Upper Mustang felt like stepping into another world. The landscape is surreal and our guide's knowledge of the forbidden kingdom's history was incredible."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">LB</div>
+                        <div class="reviewer-info">
+                            <strong>Lena Bergström</strong>
+                            <span>Sweden</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"I came alone and left with lifelong friends. Expedition 77 created the perfect group dynamic and the safety protocols made my family worry a lot less!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">MO</div>
+                        <div class="reviewer-info">
+                            <strong>Marco Oliveira</strong>
+                            <span>Brazil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                    <p class="review-text">"The Manaslu Circuit was tough but the views were worth every step. Our guide pushed us just enough while always prioritising our wellbeing."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">HN</div>
+                        <div class="reviewer-info">
+                            <strong>Hana Nakamura</strong>
+                            <span>Japan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"Truly a bucket-list experience. The team went above and beyond when one of us had altitude sickness — professional, calm, and incredibly caring."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">EP</div>
+                        <div class="reviewer-info">
+                            <strong>Elena Petrov</strong>
+                            <span>Russia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="review-text">"The sunrise from Poon Hill alone was worth the entire trip. Expedition 77 made sure we arrived at the perfect time. I cannot recommend them enough."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">KA</div>
+                        <div class="reviewer-info">
+                            <strong>Kofi Asante</strong>
+                            <span>Ghana</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- end track-right -->
+
+        </div><!-- end reviews-track-wrapper -->
+    </div><!-- end reviews-section -->
+
 </div><!-- end overlay -->
+
 
 <!-- FOOTER -->
 <footer class="footer">
