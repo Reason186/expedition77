@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -56,113 +57,36 @@
 
         <div class="guide-grid">
 
-            <div class="guide-card">
-                <div class="card-glow"></div>
-                <div class="card-body">
-                    <div class="guide-photo-wrap">
-                        <img src="https://ui-avatars.com/api/?name=Pemba+Sherpa&background=0D8ABC&color=fff&size=200"
-                             class="guide-photo" alt="Pemba Sherpa">
-                        <div class="photo-ring"></div>
+            <c:forEach var="guide" items="${guideList}">
+                <div class="guide-card">
+                    <div class="card-glow"></div>
+                    <div class="card-body">
+                        <div class="guide-photo-wrap">
+                            <img src="${guide.photoUrl}"
+                                 class="guide-photo" alt="${guide.name}">
+                            <div class="photo-ring"></div>
+                        </div>
+                        <h3>${guide.name}</h3>
+                        <span class="guide-specialty specialty-default">${guide.specialty}</span>
+                        <p class="guide-bio">${guide.bio}</p>
+                        <div class="guide-chips">
+                            <span class="chip"><b>${guide.experienceYears}</b> Years</span>
+                            <span class="chip"><b>${guide.treksCompleted}+</b> Treks</span>
+                        </div>
+                        <div class="guide-stars">
+                            &#9733;&#9733;&#9733;&#9733;&#9733;
+                            <span>${guide.rating} (${guide.reviewCount} reviews)</span>
+                        </div>
+                        <a href="${pageContext.request.contextPath}/login" class="hire-btn">Book This Guide</a>
                     </div>
-                    <h3>Pemba Sherpa</h3>
-                    <span class="guide-specialty specialty-everest">Everest Specialist</span>
-                    <p class="guide-bio">
-                        Summited Everest 6 times. Specialist in high-altitude rescues and
-                        acclimatization planning for Base Camp expeditions.
-                    </p>
-                    <div class="guide-chips">
-                        <span class="chip"><b>12</b> Years</span>
-                        <span class="chip"><b>340+</b> Treks</span>
-                        <span class="chip"><b>6x</b> Summit</span>
-                    </div>
-                    <div class="guide-stars">
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        <span>5.0 (128 reviews)</span>
-                    </div>
-                    <a href="${pageContext.request.contextPath}/login" class="hire-btn">Book This Guide</a>
                 </div>
-            </div>
+            </c:forEach>
 
-            <div class="guide-card">
-                <div class="card-glow"></div>
-                <div class="card-body">
-                    <div class="guide-photo-wrap">
-                        <img src="https://ui-avatars.com/api/?name=Dawa+Lama&background=2398A1&color=fff&size=200"
-                             class="guide-photo" alt="Dawa Lama">
-                        <div class="photo-ring"></div>
-                    </div>
-                    <h3>Dawa Lama</h3>
-                    <span class="guide-specialty specialty-annapurna">Annapurna Expert</span>
-                    <p class="guide-bio">
-                        Deep knowledge of the Annapurna Circuit and Sanctuary trails.
-                        Known for sharing Himalayan culture and wildlife stories.
-                    </p>
-                    <div class="guide-chips">
-                        <span class="chip"><b>8</b> Years</span>
-                        <span class="chip"><b>210+</b> Treks</span>
-                        <span class="chip"><b>3x</b> Summit</span>
-                    </div>
-                    <div class="guide-stars">
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        <span>4.9 (96 reviews)</span>
-                    </div>
-                    <a href="${pageContext.request.contextPath}/login" class="hire-btn">Book This Guide</a>
+            <c:if test="${empty guideList}">
+                <div class="no-guides">
+                    <p>No guides available right now. Check back soon!</p>
                 </div>
-            </div>
-
-            <div class="guide-card">
-                <div class="card-glow"></div>
-                <div class="card-body">
-                    <div class="guide-photo-wrap">
-                        <img src="https://ui-avatars.com/api/?name=Srijana+Thapa&background=0072FF&color=fff&size=200"
-                             class="guide-photo" alt="Srijana Thapa">
-                        <div class="photo-ring"></div>
-                    </div>
-                    <h3>Srijana Thapa</h3>
-                    <span class="guide-specialty specialty-langtang">Langtang Expert</span>
-                    <p class="guide-bio">
-                        Passionate about Langtang Valley ecology and beginner treks.
-                        First-time trekkers feel confident and safe with her.
-                    </p>
-                    <div class="guide-chips">
-                        <span class="chip"><b>5</b> Years</span>
-                        <span class="chip"><b>150+</b> Treks</span>
-                        <span class="chip"><b>Beginner</b> Friendly</span>
-                    </div>
-                    <div class="guide-stars">
-                        &#9733;&#9733;&#9733;&#9733;&#9734;
-                        <span>4.8 (74 reviews)</span>
-                    </div>
-                    <a href="${pageContext.request.contextPath}/login" class="hire-btn">Book This Guide</a>
-                </div>
-            </div>
-
-            <div class="guide-card">
-                <div class="card-glow"></div>
-                <div class="card-body">
-                    <div class="guide-photo-wrap">
-                        <img src="https://ui-avatars.com/api/?name=Anil+Gurung&background=7C3AED&color=fff&size=200"
-                             class="guide-photo" alt="Anil Gurung">
-                        <div class="photo-ring"></div>
-                    </div>
-                    <h3>Anil Gurung</h3>
-                    <span class="guide-specialty specialty-mustang">Upper Mustang</span>
-                    <p class="guide-bio">
-                        Veteran explorer of the forbidden kingdom. His routes reveal
-                        ancient monasteries no tourist brochure covers.
-                    </p>
-                    <div class="guide-chips">
-                        <span class="chip"><b>15</b> Years</span>
-                        <span class="chip"><b>400+</b> Treks</span>
-                        <span class="chip"><b>Remote</b> Routes</span>
-                    </div>
-                    <div class="guide-stars">
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                        <span>5.0 (152 reviews)</span>
-                    </div>
-                    <a href="${pageContext.request.contextPath}/login" class="hire-btn">Book This Guide</a>
-                </div>
-            </div>
+            </c:if>
 
         </div>
     </div>

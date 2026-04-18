@@ -226,6 +226,18 @@
     border: 1px solid rgba(192,132,252,0.3);
 }
 
+.specialty-default {
+    background: rgba(0,198,255,0.15);
+    color: #00c6ff;
+    border: 1px solid rgba(0,198,255,0.3);
+}
+
+.no-guides {
+    padding: 40px;
+    color: rgba(255,255,255,0.5);
+    font-size: 16px;
+}
+
 .guide-bio {
     font-size: 13.5px;
     color: rgba(255,255,255,0.55);
