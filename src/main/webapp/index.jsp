@@ -416,7 +416,7 @@
                 <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
                 <li><a href="${pageContext.request.contextPath}/register">Register</a></li>
                 <li><a href="#">All Treks</a></li>
-                <li><a href="#">Our Guides</a></li>
+                <li><a href="${pageContext.request.contextPath}/guides">Our Guides</a></li>
                 <li><a href="#">Gallery</a></li>
             </ul>
         </div>
