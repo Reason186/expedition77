@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import com.expedition.dao.GuideDAO;
 import com.expedition.service.RegisterService;
 
 /**
@@ -39,12 +38,10 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-            String role = request.getParameter("role");
             String name = request.getParameter("fullName");
             String email = request.getParameter("email");
             String phone = request.getParameter("phone");
             String password = request.getParameter("password");
-            String confirmPassword = request.getParameter("confirmPassword");
             
             String passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!]).{8,}$";
             
@@ -55,28 +52,10 @@ public class RegisterServlet extends HttpServlet {
                 return;
             }
             
-            if (!password.equals(confirmPassword)) {
-                request.setAttribute("message", "Passwords do not match.");
-                request.getRequestDispatcher("/WEB-INF/pages/register.jsp").forward(request, response);
-                return;
-            }
-            
-            if ("guide".equals(role)) {
-                String specialty = request.getParameter("specialty");
-                String bio = request.getParameter("bio");
-                int experience = Integer.parseInt(request.getParameter("experience"));
-                
-                GuideDAO guideDao = new GuideDAO();
-                guideDao.insertGuide(name, email, password, phone, specialty, bio, experience);
-                
-                request.setAttribute("message", "Guide Registered Successfully.");
-            } else {
-                RegisterService service = new RegisterService();
-                service.addUser(name, email, password, phone);
-                
-                request.setAttribute("message", "Registered Successfully.");
-            }
-            
+            RegisterService service = new RegisterService();
+            service.addUser(name, email, password, phone);
+            request.setAttribute("message", 
+                    "Registered Successfully.");
             request.getRequestDispatcher("/WEB-INF/pages/register.jsp").forward(request, response);
             
         } catch (Exception e) {
