@@ -1,0 +1,344 @@
+.profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 24px 80px;
+}
+
+.welcome-section {
+    padding: 20px 0 40px;
+}
+
+.welcome-section h1 {
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+    animation: fadeInUp 0.5s ease;
+}
+
+.welcome-section p {
+    color: var(--text-muted);
+    font-size: 16px;
+    animation: fadeInUp 0.5s ease 0.1s both;
+}
+
+.profile-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1.9fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.profile-sidebar-block {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.p-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 30px;
+    transition: var(--transition);
+}
+
+.p-card:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-md);
+}
+
+.profile-header-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.profile-avatar-large {
+    width: 90px;
+    height: 90px;
+    border-radius: var(--radius-full);
+    background: var(--primary-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 30px;
+    border: 3px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 16px;
+}
+
+.profile-header-wrap h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.profile-role-tag {
+    display: inline-block;
+    padding: 3px 12px;
+    background: rgba(167, 139, 250, 0.1);
+    color: #a78bfa;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+.profile-fields-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.profile-field-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.field-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.field-value {
+    font-size: 14px;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.profile-edit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 24px;
+    transition: var(--transition-fast);
+}
+
+.profile-edit-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--border-hover);
+}
+
+.danger-zone-card {
+    border-color: rgba(239, 68, 68, 0.15);
+}
+
+.danger-zone-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fb7185;
+    margin-bottom: 12px;
+}
+
+.danger-description {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.danger-actions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.danger-btn-deactivate {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    text-align: center;
+    background: rgba(251, 113, 133, 0.05);
+    color: #fb7185;
+    border: 1px solid rgba(251, 113, 133, 0.15);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 700;
+    transition: var(--transition-fast);
+}
+
+.danger-btn-deactivate:hover {
+    background: rgba(251, 113, 133, 0.12);
+    border-color: rgba(251, 113, 133, 0.3);
+}
+
+.danger-btn-delete {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    text-align: center;
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 700;
+    transition: var(--transition-fast);
+}
+
+.danger-btn-delete:hover {
+    background: rgba(239, 68, 68, 0.25);
+    border-color: #ef4444;
+}
+
+.bookings-list-card h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 14px;
+}
+
+.bookings-list-card h2 span {
+    color: var(--primary);
+}
+
+.bookings-grid-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.booking-item-row {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.booking-item-row:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: var(--border-hover);
+}
+
+.b-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.b-header-line {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.b-trek-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.b-status-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.b-status-badge.Pending { background: rgba(251, 191, 36, 0.1); color: #fbbf24; }
+.b-status-badge.Confirmed { background: rgba(52, 211, 153, 0.1); color: #34d399; }
+.b-status-badge.Cancelled { background: rgba(251, 113, 133, 0.1); color: #fb7185; }
+
+.b-meta-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.b-meta-line strong {
+    color: var(--text-main);
+}
+
+.b-cancel-action-btn {
+    padding: 8px 16px;
+    background: rgba(239, 68, 68, 0.08);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 700;
+    transition: var(--transition-fast);
+}
+
+.b-cancel-action-btn:hover {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.bookings-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--text-muted);
+}
+
+.bookings-empty-state svg {
+    margin-bottom: 16px;
+    color: var(--text-dark);
+}
+
+.bookings-empty-state p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.book-first-trek-btn {
+    padding: 10px 24px;
+    background: var(--primary-gradient);
+    color: #ffffff;
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 700;
+    transition: var(--transition-fast);
+}
+
+.book-first-trek-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(249, 87, 56, 0.3);
+}
+
+@media (max-width: 992px) {
+    .profile-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 100px 16px 60px;
+    }
+}
