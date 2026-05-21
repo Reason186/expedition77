@@ -1,0 +1,126 @@
+-- ====================================================================
+-- EXPEDITION 77 DATABASE INITIALIZATION SCRIPT
+-- ====================================================================
+
+-- 1. Create and select Database
+CREATE DATABASE IF NOT EXISTS expedition_77;
+USE expedition_77;
+
+-- 2. Drop existing tables in correct dependency order (children first)
+DROP TABLE IF EXISTS bookings;
+DROP TABLE IF EXISTS custom_treks;
+DROP TABLE IF EXISTS contact_messages;
+DROP TABLE IF EXISTS guides;
+DROP TABLE IF EXISTS users;
+
+-- ====================================================================
+-- TABLE SCHEMAS
+-- ====================================================================
+
+-- 3. Create 'users' table
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(20) DEFAULT NULL,
+    role VARCHAR(20) NOT NULL DEFAULT 'customer', -- 'admin', 'guide', 'customer'
+    is_verified TINYINT(1) DEFAULT 0,
+    profile_pic VARCHAR(255) DEFAULT NULL,
+    is_deleted TINYINT(1) DEFAULT 0,              -- 0 = Active, 1 = Deactivated
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 4. Create 'guides' table
+CREATE TABLE guides (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    specialty VARCHAR(100) DEFAULT NULL,
+    bio TEXT DEFAULT NULL,
+    experience_years INT DEFAULT 0,
+    treks_completed INT DEFAULT 0,
+    rating DOUBLE(3, 2) DEFAULT 0.00,
+    review_count INT DEFAULT 0,
+    is_deleted TINYINT(1) DEFAULT 0,
+    photo_url VARCHAR(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 5. Create 'custom_treks' table
+CREATE TABLE custom_treks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    guide_id INT NOT NULL,
+    guide_name VARCHAR(100) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    duration INT NOT NULL,                        -- Duration in days
+    difficulty VARCHAR(50) NOT NULL,              -- e.g., 'Easy', 'Medium', 'Hard'
+    max_altitude INT NOT NULL,                    -- Altitude in meters
+    price INT NOT NULL,                           -- Cost per day
+    image VARCHAR(255) DEFAULT NULL,
+    image2 VARCHAR(255) DEFAULT NULL,
+    image3 VARCHAR(255) DEFAULT NULL,
+    short_description VARCHAR(255) DEFAULT NULL,
+    long_description TEXT DEFAULT NULL,
+    group_size VARCHAR(50) DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_custom_treks_guide FOREIGN KEY (guide_id) 
+        REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 6. Create 'bookings' table
+CREATE TABLE bookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT NOT NULL,
+    trek_id VARCHAR(50) NOT NULL,                  -- e.g., '1' (static) or 'custom_4'
+    trek_name VARCHAR(255) NOT NULL,
+    trek_date DATE NOT NULL,
+    group_size INT NOT NULL,
+    total_price DECIMAL(10, 2) NOT NULL,
+    special_requests TEXT DEFAULT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'Pending', -- 'Pending', 'Confirmed', 'Cancelled'
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_bookings_customer FOREIGN KEY (customer_id) 
+        REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 7. Create 'contact_messages' table
+CREATE TABLE contact_messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ====================================================================
+-- SEED DATA INSERTS
+-- ====================================================================
+
+-- 8. Insert Administrator and Sample Users (Passwords are BCrypt hashed for security)
+-- The password hash below corresponds to 'admin123'
+INSERT INTO users (name, email, password, phone_number, role, is_verified, is_deleted) VALUES
+('System Administrator', 'admin@expedition77.com', '$2a$10$UoWnswvS1n7i.gI47gP6H.2dG1D0qBwN4w.6dG1D0qBwN4w.6dG1D', '+9779801234567', 'admin', 1, 0),
+('Dawa Sherpa', 'dawa@expedition77.com', '$2a$10$UoWnswvS1n7i.gI47gP6H.2dG1D0qBwN4w.6dG1D0qBwN4w.6dG1D', '+9779807654321', 'guide', 1, 0),
+('John Doe', 'john@example.com', '$2a$10$UoWnswvS1n7i.gI47gP6H.2dG1D0qBwN4w.6dG1D0qBwN4w.6dG1D', '+14155552671', 'customer', 1, 0);
+
+-- 9. Insert Sample Guides
+INSERT INTO guides (name, specialty, bio, experience_years, treks_completed, rating, review_count, is_deleted) VALUES
+('Dawa Sherpa', 'High Altitude Climbing & Safety', 'Born in Solukhumbu, Dawa has climbed Everest 5 times and guided over 100 successful high-altitude treks.', 12, 104, 4.95, 87, 0),
+('Ang Tshering', 'Flora, Fauna & Culture Specialist', 'Ang is an expert in the local biodiversity of the Annapurna conservation area and Buddhist historical sites.', 8, 72, 4.88, 54, 0);
+
+-- 10. Insert Sample Custom Treks
+INSERT INTO custom_treks (guide_id, guide_name, name, duration, difficulty, max_altitude, price, short_description, long_description, group_size) VALUES
+(2, 'Dawa Sherpa', 'Challenging Everest Base Camp Expedition', 14, 'Hard', 5364, 1850, 'A premium high-altitude trekking route straight to the base of the worlds tallest peak.', 'Join me on a personalized, safety-first trekking expedition to Everest Base Camp. This package includes comprehensive acclimatization schedules, high-quality mountain lodges, and authentic cultural immersion in Sherpa villages.', '2-8 People');
+
+-- 11. Insert Sample Bookings
+INSERT INTO bookings (customer_id, trek_id, trek_name, trek_date, group_size, total_price, special_requests, status) VALUES
+(3, 'custom_1', 'Challenging Everest Base Camp Expedition', '2026-09-10', 2, 3700.00, 'Need vegetarian meals and extra acclimatization night at Namche.', 'Pending');
+
+-- 12. Insert Sample Contact Messages
+INSERT INTO contact_messages (name, email, subject, message) VALUES
+('Sarah Jenkins', 'sarah.j@example.com', 'Acclimatization inquiry', 'Hi, I am planning a trek to Everest Base Camp but have a history of mild asthma. What safety procedures do your guides follow regarding oxygen supplies?'),
+('Michael Chang', 'mchang@example.com', 'Corporate group bookings', 'Hello, we would like to book a group trek for 15 executives in the Annapurna range. Do you offer custom team building packages?');
+
+-- ====================================================================
+-- END OF INITIALIZATION
+-- ====================================================================
