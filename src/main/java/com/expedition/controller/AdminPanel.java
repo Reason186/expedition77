@@ -26,36 +26,8 @@ public class AdminPanel extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Route Protection: Ensure only logged-in admins can access
-		jakarta.servlet.http.HttpSession session = request.getSession(false);
-		if (session == null || session.getAttribute("userEmail") == null || !"admin".equals(session.getAttribute("userRole"))) {
-			response.sendRedirect(request.getContextPath() + "/admin-login?error=UnauthorizedAccess");
-			return;
-		}
-
-		try {
-			com.expedition.dao.UserDAO userDao = new com.expedition.dao.UserDAO();
-			com.expedition.dao.BookingDAO bookingDao = new com.expedition.dao.BookingDAO();
-			com.expedition.dao.ContactDAO contactDao = new com.expedition.dao.ContactDAO();
-
-			int guidesCount = userDao.getActiveGuidesCount();
-			int customersCount = userDao.getActiveCustomersCount();
-			int bookingsCount = bookingDao.getTotalBookingsCount();
-			int queriesCount = contactDao.getTotalQueriesCount();
-
-			java.util.List<java.util.Map<String, Object>> recentQueries = contactDao.getRecentContactMessages(5);
-			java.util.List<java.util.Map<String, Object>> allUsers = userDao.getAllUsers();
-
-			request.setAttribute("guidesCount", guidesCount);
-			request.setAttribute("customersCount", customersCount);
-			request.setAttribute("bookingsCount", bookingsCount);
-			request.setAttribute("queriesCount", queriesCount);
-			request.setAttribute("recentQueries", recentQueries);
-			request.setAttribute("allUsers", allUsers);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		// TODO Auto-generated method stub
+		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		request.getRequestDispatcher("/WEB-INF/pages/adminPanel.jsp").forward(request, response);
 	}
 
